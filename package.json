@@ -9,11 +9,12 @@
     ],
     "scripts": {
         "build": "tsc",
+        "typedoc": "typedoc --plugin typedoc-plugin-markdown --cleanOutputDir --excludePrivate --includeVersion --readme none ./src/index.ts",
         "version": "npm run build && git add .",
         "lint": "eslint \"./src/**/*.ts\"",
         "format": "prettier --write ./src/",
         "format:check": "prettier --check ./src/",
-        "ci:version": "changeset version && npm run version",
+        "ci:version": "changeset version && npm run typedoc && git add .",
         "ci:publish": "npm run build && changeset publish"
     },
     "repository": {
@@ -37,6 +38,8 @@
         "@robot-inventor/tsconfig-base": "^6.0.1",
         "eslint": "^9.26.0",
         "prettier": "^3.5.3",
+        "typedoc": "^0.28.4",
+        "typedoc-plugin-markdown": "^4.6.3",
         "typescript": "^5.8.3"
     },
     "dependencies": {

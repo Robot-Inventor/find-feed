@@ -15,3 +15,5 @@ import { findFeed } from "find-feed";
 
 const feeds = await findFeed("https://example.com/");
 ```
+
+For more details, please refer to the [documentation](./docs/README.md).
