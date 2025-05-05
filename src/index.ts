@@ -1,8 +1,14 @@
 import { parseHTML } from "linkedom";
 
+/**
+ * Interface representing a feed item.
+ */
 interface FeedItem {
+    /** The URL of the feed. */
     href: string | null;
+    /** The title of the feed. */
     title: string | null;
+    /** The type of the feed (e.g., application/rss+xml, application/atom+xml). */
     type: string | null;
 }
 
@@ -61,4 +67,4 @@ const findFeed = async (pageUrl: string, recursive = false, requestOptions?: Req
     return uniqueFeeds;
 };
 
-export { findFeed };
+export { type FeedItem, findFeed };
