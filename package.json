@@ -9,11 +9,12 @@
     ],
     "scripts": {
         "build": "tsc",
+        "version": "npm run build && git add .",
         "lint": "eslint \"./src/**/*.ts\"",
         "format": "prettier --write ./src/",
         "format:check": "prettier --check ./src/",
-        "ci:version": "changeset version",
-        "ci:publish": "changeset publish"
+        "ci:version": "changeset version && npm run version",
+        "ci:publish": "npm run build && changeset publish"
     },
     "repository": {
         "type": "git",
