@@ -1,6 +1,6 @@
 {
     "name": "find-feed",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Find the URL of the feed of the specified web page.",
     "type": "module",
     "main": "./dist/index.js",
