@@ -19,7 +19,11 @@ interface FindFeedOptions {
     recursive?: boolean;
     /** Optional request options for the fetch call. */
     requestOptions?: RequestInit;
-    /** Whether to perform an aggressive search for feeds, including uncertain ones. */
+    /**
+     * Whether to perform an aggressive search for feeds, including uncertain ones.
+     * When set to `true`, it will heuristically detect RSS feed URLs by exploring links such as `<a href="https://example.com/feed"></a>`.
+     * Feeds found using this method will have the `isUncertain` property set to `true`.
+     */
     aggressiveSearch?: boolean;
 }
 
