@@ -1,4 +1,4 @@
-[**find-feed v1.1.1**](../README.md)
+[**find-feed v1.2.0**](../README.md)
 
 ***
 
@@ -6,7 +6,7 @@
 
 # Interface: FindFeedOptions
 
-Defined in: [index.ts:17](https://github.com/Robot-Inventor/find-feed/blob/e127bf360d24e8f251b186822042bfba62823e80/src/index.ts#L17)
+Defined in: [index.ts:17](https://github.com/Robot-Inventor/find-feed/blob/f8e1bdebfcfbbb6152c514886e0c6225dd3aef43/src/index.ts#L17)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [index.ts:17](https://github.com/Robot-Inventor/find-feed/blob/e127b
 
 > `optional` **aggressiveSearch**: `boolean`
 
-Defined in: [index.ts:27](https://github.com/Robot-Inventor/find-feed/blob/e127bf360d24e8f251b186822042bfba62823e80/src/index.ts#L27)
+Defined in: [index.ts:27](https://github.com/Robot-Inventor/find-feed/blob/f8e1bdebfcfbbb6152c514886e0c6225dd3aef43/src/index.ts#L27)
 
 Whether to perform an aggressive search for feeds, including uncertain ones.
 When set to `true`, it will heuristically detect RSS feed URLs by exploring links such as `<a href="https://example.com/feed"></a>`.
@@ -26,7 +26,7 @@ Feeds found using this method will have the `isUncertain` property set to `true`
 
 > `optional` **recursive**: `boolean`
 
-Defined in: [index.ts:19](https://github.com/Robot-Inventor/find-feed/blob/e127bf360d24e8f251b186822042bfba62823e80/src/index.ts#L19)
+Defined in: [index.ts:19](https://github.com/Robot-Inventor/find-feed/blob/f8e1bdebfcfbbb6152c514886e0c6225dd3aef43/src/index.ts#L19)
 
 Whether to search for feeds in the parent page URL.
 
@@ -36,6 +36,6 @@ Whether to search for feeds in the parent page URL.
 
 > `optional` **requestOptions**: `RequestInit`
 
-Defined in: [index.ts:21](https://github.com/Robot-Inventor/find-feed/blob/e127bf360d24e8f251b186822042bfba62823e80/src/index.ts#L21)
+Defined in: [index.ts:21](https://github.com/Robot-Inventor/find-feed/blob/f8e1bdebfcfbbb6152c514886e0c6225dd3aef43/src/index.ts#L21)
 
 Optional request options for the fetch call.

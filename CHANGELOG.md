@@ -1,5 +1,11 @@
 # find-feed
 
+## 1.2.0
+
+### Minor Changes
+
+- [#17](https://github.com/Robot-Inventor/find-feed/pull/17) [`f8e1bde`](https://github.com/Robot-Inventor/find-feed/commit/f8e1bdebfcfbbb6152c514886e0c6225dd3aef43) Thanks [@Robot-Inventor](https://github.com/Robot-Inventor)! - feat: ignore trailing slashes when removing duplicate feed URLs
+
 ## 1.1.1
 
 ### Patch Changes
