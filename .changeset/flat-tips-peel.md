@@ -1,5 +1,5 @@
 ---
-"find-feed": minor
+"find-feed": major
 ---
 
 feat: add `aggressiveSearch` option
