@@ -1,5 +1,11 @@
 # find-feed
 
+## 1.1.1
+
+### Patch Changes
+
+- [#15](https://github.com/Robot-Inventor/find-feed/pull/15) [`e127bf3`](https://github.com/Robot-Inventor/find-feed/commit/e127bf360d24e8f251b186822042bfba62823e80) Thanks [@Robot-Inventor](https://github.com/Robot-Inventor)! - docs: improve the description for the `aggressiveSearch` option
+
 ## 1.1.0
 
 ### Minor Changes
