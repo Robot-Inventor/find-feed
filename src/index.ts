@@ -44,6 +44,7 @@ const getParentUrl = (url: string): string | null => {
 
 /**
  * Remove duplicate feeds from the given array of feeds.
+ * This function considers URLs with or without a trailing slash as identical.
  * @param feeds The array of feeds to remove duplicates from.
  * @returns An array of unique feeds.
  */
@@ -53,11 +54,15 @@ const removeDuplicateFeeds = (feeds: FeedItem[]): FeedItem[] => {
     feeds.forEach((feed) => {
         if (!feed.href) return;
 
+        // Normalize the URL by checking both with and without a trailing slash
+        const normalizedHref = feed.href.replace(/\/$/u, "");
+        const alternateHref = feed.href.endsWith("/") ? feed.href : `${feed.href}/`;
+
         // If the feed is already in the map, prioritize the one with `isUncertain: false`
-        const existingFeed = feedMap.get(feed.href);
+        const existingFeed = feedMap.get(normalizedHref) ?? feedMap.get(alternateHref);
         if (existingFeed && !existingFeed.isUncertain) return;
 
-        feedMap.set(feed.href, feed);
+        feedMap.set(normalizedHref, feed);
     });
 
     return Array.from(feedMap.values());
