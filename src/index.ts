@@ -151,13 +151,4 @@ const findFeed = async (pageUrl: string, options?: FindFeedOptions): Promise<Fee
     return uniqueFeeds;
 };
 
-const feeds = await findFeed(
-    "https://techcommunity.microsoft.com/discussions/microsoft-365/how-microsoft-365-copilot-tenants-benefit-from-sharepoint-advanced-management/4411055#M57296",
-    {
-        recursive: true,
-        aggressiveSearch: true
-    }
-);
-console.info(feeds);
-
 export { type FeedItem, findFeed };
