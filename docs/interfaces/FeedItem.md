@@ -1,4 +1,4 @@
-[**find-feed v0.1.1**](../README.md)
+[**find-feed v1.0.0**](../README.md)
 
 ***
 
@@ -6,7 +6,7 @@
 
 # Interface: FeedItem
 
-Defined in: [index.ts:6](https://github.com/Robot-Inventor/find-feed/blob/50bb94790f41d7d58a7b84b6dd766be1f13602e7/src/index.ts#L6)
+Defined in: [index.ts:6](https://github.com/Robot-Inventor/find-feed/blob/7c9c63fa67a3329a40222a3dface41ca4bd93223/src/index.ts#L6)
 
 Interface representing a feed item.
 
@@ -16,9 +16,19 @@ Interface representing a feed item.
 
 > **href**: `null` \| `string`
 
-Defined in: [index.ts:8](https://github.com/Robot-Inventor/find-feed/blob/50bb94790f41d7d58a7b84b6dd766be1f13602e7/src/index.ts#L8)
+Defined in: [index.ts:8](https://github.com/Robot-Inventor/find-feed/blob/7c9c63fa67a3329a40222a3dface41ca4bd93223/src/index.ts#L8)
 
 The URL of the feed.
+
+***
+
+### isUncertain
+
+> **isUncertain**: `boolean`
+
+Defined in: [index.ts:14](https://github.com/Robot-Inventor/find-feed/blob/7c9c63fa67a3329a40222a3dface41ca4bd93223/src/index.ts#L14)
+
+Whether the feed is uncertain (e.g., from aggressiveSearch).
 
 ***
 
@@ -26,7 +36,7 @@ The URL of the feed.
 
 > **title**: `null` \| `string`
 
-Defined in: [index.ts:10](https://github.com/Robot-Inventor/find-feed/blob/50bb94790f41d7d58a7b84b6dd766be1f13602e7/src/index.ts#L10)
+Defined in: [index.ts:10](https://github.com/Robot-Inventor/find-feed/blob/7c9c63fa67a3329a40222a3dface41ca4bd93223/src/index.ts#L10)
 
 The title of the feed.
 
@@ -36,6 +46,6 @@ The title of the feed.
 
 > **type**: `null` \| `string`
 
-Defined in: [index.ts:12](https://github.com/Robot-Inventor/find-feed/blob/50bb94790f41d7d58a7b84b6dd766be1f13602e7/src/index.ts#L12)
+Defined in: [index.ts:12](https://github.com/Robot-Inventor/find-feed/blob/7c9c63fa67a3329a40222a3dface41ca4bd93223/src/index.ts#L12)
 
 The type of the feed (e.g., application/rss+xml, application/atom+xml).
