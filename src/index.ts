@@ -151,4 +151,4 @@ const findFeed = async (pageUrl: string, options?: FindFeedOptions): Promise<Fee
     return uniqueFeeds;
 };
 
-export { type FeedItem, findFeed };
+export { type FeedItem, type FindFeedOptions, findFeed };
