@@ -1,4 +1,4 @@
-[**find-feed v0.1.1**](../README.md)
+[**find-feed v1.0.0**](../README.md)
 
 ***
 
@@ -6,9 +6,9 @@
 
 # Function: findFeed()
 
-> **findFeed**(`pageUrl`, `recursive`, `requestOptions?`): `Promise`\<[`FeedItem`](../interfaces/FeedItem.md)[]\>
+> **findFeed**(`pageUrl`, `options?`): `Promise`\<[`FeedItem`](../interfaces/FeedItem.md)[]\>
 
-Defined in: [index.ts:46](https://github.com/Robot-Inventor/find-feed/blob/50bb94790f41d7d58a7b84b6dd766be1f13602e7/src/index.ts#L46)
+Defined in: [index.ts:132](https://github.com/Robot-Inventor/find-feed/blob/7c9c63fa67a3329a40222a3dface41ca4bd93223/src/index.ts#L132)
 
 Find RSS or Atom feeds in the given page URL.
 
@@ -20,17 +20,11 @@ Find RSS or Atom feeds in the given page URL.
 
 The URL of the page to search for feeds.
 
-### recursive
+### options?
 
-`boolean` = `false`
+`FindFeedOptions`
 
-Whether to search for feeds in the parent page URL.
-
-### requestOptions?
-
-`RequestInit`
-
-Optional request options for the fetch call.
+Optional options for the search.
 
 ## Returns
 
