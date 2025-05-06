@@ -1,8 +1,8 @@
-**find-feed v1.1.1**
+**find-feed v1.2.0**
 
 ***
 
-# find-feed v1.1.1
+# find-feed v1.2.0
 
 ## Interfaces
 
