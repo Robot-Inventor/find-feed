@@ -10,6 +10,17 @@ interface FeedItem {
     title: string | null;
     /** The type of the feed (e.g., application/rss+xml, application/atom+xml). */
     type: string | null;
+    /** Whether the feed is uncertain (e.g., from aggressiveSearch). */
+    isUncertain: boolean;
+}
+
+interface FindFeedOptions {
+    /** Whether to search for feeds in the parent page URL. */
+    recursive?: boolean;
+    /** Optional request options for the fetch call. */
+    requestOptions?: RequestInit;
+    /** Whether to perform an aggressive search for feeds, including uncertain ones. */
+    aggressiveSearch?: boolean;
 }
 
 /**
@@ -32,39 +43,121 @@ const getParentUrl = (url: string): string | null => {
  * @param feeds The array of feeds to remove duplicates from.
  * @returns An array of unique feeds.
  */
-const removeDuplicateFeeds = (feeds: FeedItem[]): FeedItem[] =>
-    Array.from(new Map(feeds.map((feed) => [feed.href, feed])).values());
+const removeDuplicateFeeds = (feeds: FeedItem[]): FeedItem[] => {
+    const feedMap = new Map<string, FeedItem>();
+
+    feeds.forEach((feed) => {
+        if (!feed.href) return;
+
+        // If the feed is already in the map, prioritize the one with `isUncertain: false`
+        const existingFeed = feedMap.get(feed.href);
+        if (existingFeed && !existingFeed.isUncertain) return;
+
+        feedMap.set(feed.href, feed);
+    });
+
+    return Array.from(feedMap.values());
+};
+
+/**
+ * Find feeds from <link> elements in the document.
+ * @param pageUrl The URL of the page.
+ * @param document The parsed HTML document.
+ * @returns An array of FeedItem objects.
+ */
+const findFeedsFromLinks = (pageUrl: string, document: Document): FeedItem[] => {
+    const links = document.querySelectorAll<HTMLLinkElement>(
+        "link[rel='alternate'][type='application/rss+xml'], link[rel='alternate'][type='application/atom+xml']"
+    );
+
+    return [...links].map((link) => {
+        const hrefAttribute = link.href;
+        const href = hrefAttribute ? new URL(hrefAttribute, pageUrl).toString() : hrefAttribute;
+
+        return {
+            href,
+            isUncertain: false,
+            title: link.title ? link.title.trim() : null,
+            type: link.type
+        } as const satisfies FeedItem;
+    });
+};
+
+/**
+ * Find feeds from <a> elements in the document.
+ * @param pageUrl The URL of the page.
+ * @param document The parsed HTML document.
+ * @returns An array of FeedItem objects.
+ */
+const findFeedsFromAnchors = (pageUrl: string, document: Document): FeedItem[] => {
+    const possibleFeeds = [...document.querySelectorAll("a")].filter((link) => {
+        const { href } = link;
+        const parsedHref = URL.parse(href, pageUrl);
+        if (!parsedHref) return false;
+
+        const { pathname } = parsedHref;
+
+        // Example: https://example.com/foo/feed.xml
+        if (/\/(?:feed|feeds|rss|atom|index)\.(?:xml|rss|rdf|atom)$/u.exec(pathname)) return true;
+
+        // Example: https://example.com/feed
+        if (/\/(?:feed|feeds|rss|atom)$/u.exec(pathname)) return true;
+
+        // Example: https://example.com/feed/
+        if (/\/(?:feed|feeds|rss|atom)\//u.exec(pathname)) return true;
+
+        return false;
+    });
+
+    return possibleFeeds.map((link) => {
+        const hrefAttribute = link.href;
+        const href = hrefAttribute ? new URL(hrefAttribute, pageUrl).toString() : hrefAttribute;
+
+        return {
+            href,
+            isUncertain: true,
+            title: link.textContent ? link.textContent.trim() : null,
+            type: null
+        } as const satisfies FeedItem;
+    });
+};
 
 /**
  * Find RSS or Atom feeds in the given page URL.
  * @param pageUrl The URL of the page to search for feeds.
- * @param recursive Whether to search for feeds in the parent page URL.
- * @param requestOptions Optional request options for the fetch call.
+ * @param options Optional options for the search.
  * @returns An array of feed items found in the page.
  */
 // eslint-disable-next-line max-statements
-const findFeed = async (pageUrl: string, recursive = false, requestOptions?: RequestInit): Promise<FeedItem[]> => {
+const findFeed = async (pageUrl: string, options?: FindFeedOptions): Promise<FeedItem[]> => {
+    const { recursive = false, requestOptions = {}, aggressiveSearch = false } = options ?? {};
+
     const response = await fetch(pageUrl, requestOptions);
     const text = await response.text();
     const { document } = parseHTML(text);
 
-    const links = document.querySelectorAll(
-        "link[rel='alternate'][type='application/rss+xml'], link[rel='alternate'][type='application/atom+xml']"
-    );
-    const feeds = [...links].map((link) => ({
-        href: link.getAttribute("href"),
-        title: link.getAttribute("title"),
-        type: link.getAttribute("type")
-    }));
+    const feeds = findFeedsFromLinks(pageUrl, document);
+    const possibleFeeds = aggressiveSearch ? findFeedsFromAnchors(pageUrl, document) : [];
+
+    const result = feeds.concat(possibleFeeds);
+
+    if (!recursive) return removeDuplicateFeeds(result);
 
     const parentUrl = getParentUrl(pageUrl);
-    if (!recursive || !parentUrl) {
-        return feeds;
-    }
+    if (!parentUrl) return result;
 
-    const parentFeeds = await findFeed(parentUrl, true, requestOptions);
-    const uniqueFeeds = removeDuplicateFeeds(feeds.concat(parentFeeds));
+    const parentFeeds = await findFeed(parentUrl, options);
+    const uniqueFeeds = removeDuplicateFeeds(result.concat(parentFeeds));
     return uniqueFeeds;
 };
+
+const feeds = await findFeed(
+    "https://techcommunity.microsoft.com/discussions/microsoft-365/how-microsoft-365-copilot-tenants-benefit-from-sharepoint-advanced-management/4411055#M57296",
+    {
+        recursive: true,
+        aggressiveSearch: true
+    }
+);
+console.info(feeds);
 
 export { type FeedItem, findFeed };
