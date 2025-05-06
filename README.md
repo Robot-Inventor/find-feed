@@ -2,6 +2,12 @@
 
 Find the URL of the feed of the specified web page.
 
+## Features
+
+- Retrieve feeds from parent pages
+- Obtain `<link rel="alternate>` tags
+- Estimate feed URLs from `<a>` tags on the page even if they are not defined in `<link rel="alternate>` tags
+
 ## Installation
 
 ```bash
