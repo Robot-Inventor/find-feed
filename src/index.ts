@@ -154,7 +154,7 @@ const findFeed = async (pageUrl: string, options?: FindFeedOptions): Promise<Fee
     const response = await fetch(pageUrl, requestOptions);
     if (!response.ok) return [];
 
-    const contentType = response.headers.get("content-type");
+    const contentType = response.headers.get("content-type")?.trim().toLowerCase();
     if (!contentType) return [];
 
     if (isXml(contentType)) {
