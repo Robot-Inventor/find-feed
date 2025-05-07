@@ -1,5 +1,15 @@
 # find-feed
 
+## 1.3.0
+
+### Minor Changes
+
+- [#19](https://github.com/Robot-Inventor/find-feed/pull/19) [`59eb4c2`](https://github.com/Robot-Inventor/find-feed/commit/59eb4c292413c625f76a6aeb67701f28657847d2) Thanks [@Robot-Inventor](https://github.com/Robot-Inventor)! - feat: enhance feed retrieval by validating response content type
+
+### Patch Changes
+
+- [#20](https://github.com/Robot-Inventor/find-feed/pull/20) [`1a89ffd`](https://github.com/Robot-Inventor/find-feed/commit/1a89ffd357b1483211c4c25a2fd80faf0d6b415e) Thanks [@Robot-Inventor](https://github.com/Robot-Inventor)! - feat: support provenance statements on npm
+
 ## 1.2.0
 
 ### Minor Changes

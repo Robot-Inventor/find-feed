@@ -1,4 +1,4 @@
-[**find-feed v1.2.0**](../README.md)
+[**find-feed v1.3.0**](../README.md)
 
 ***
 
@@ -8,7 +8,7 @@
 
 > **findFeed**(`pageUrl`, `options?`): `Promise`\<[`FeedItem`](../interfaces/FeedItem.md)[]\>
 
-Defined in: [index.ts:141](https://github.com/Robot-Inventor/find-feed/blob/f8e1bdebfcfbbb6152c514886e0c6225dd3aef43/src/index.ts#L141)
+Defined in: [index.ts:141](https://github.com/Robot-Inventor/find-feed/blob/59eb4c292413c625f76a6aeb67701f28657847d2/src/index.ts#L141)
 
 Find RSS or Atom feeds in the given page URL.
 
