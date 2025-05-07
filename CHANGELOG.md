@@ -1,5 +1,11 @@
 # find-feed
 
+## 1.3.1
+
+### Patch Changes
+
+- [#22](https://github.com/Robot-Inventor/find-feed/pull/22) [`83fd1fa`](https://github.com/Robot-Inventor/find-feed/commit/83fd1fa06e8320c331b08be44ed00ee0c9a64f1d) Thanks [@Robot-Inventor](https://github.com/Robot-Inventor)! - docs: add an example for the options
+
 ## 1.3.0
 
 ### Minor Changes
