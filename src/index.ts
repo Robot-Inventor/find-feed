@@ -106,13 +106,13 @@ const findFeedsFromAnchors = (pageUrl: string, document: Document): FeedItem[] =
 
         const { pathname } = parsedHref;
 
-        // Example: https://example.com/foo/feed.xml
+        // Example: https://example.com/news/rss.xml
         if (/\/(?:feed|feeds|rss|atom|index)\.(?:xml|rss|rdf|atom)$/u.exec(pathname)) return true;
 
-        // Example: https://example.com/feed
+        // Example: https://example.com/news/rss
         if (/\/(?:feed|feeds|rss|atom)$/u.exec(pathname)) return true;
 
-        // Example: https://example.com/feed/
+        // Example: https://example.com/rss/news
         if (/\/(?:feed|feeds|rss|atom)\//u.exec(pathname)) return true;
 
         return false;
