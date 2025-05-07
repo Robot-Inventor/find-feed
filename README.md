@@ -1,6 +1,6 @@
 # find-feed
 
-Find the URL of the feed of the specified web page.
+Find the URL of the RSS feed of the specified web page.
 
 ## Features
 
@@ -19,7 +19,13 @@ npm install find-feed
 ```typescript
 import { findFeed } from "find-feed";
 
-const feeds = await findFeed("https://example.com/");
+const feeds = await findFeed("https://example.com/", {
+    // Search for feeds in the parent page URL.
+    recursive: true,
+    // Perform an aggressive search for feeds, including uncertain ones.
+    // It will heuristically detect RSS feed URLs by exploring links such as `<a href="https://example.com/feed"></a>`.
+    aggressiveSearch: true
+});
 ```
 
 For more details, please refer to the [documentation](./docs/README.md).
