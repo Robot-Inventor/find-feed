@@ -142,6 +142,24 @@ const findFeed = async (pageUrl: string, options?: FindFeedOptions): Promise<Fee
     const { recursive = false, requestOptions = {}, aggressiveSearch = false } = options ?? {};
 
     const response = await fetch(pageUrl, requestOptions);
+
+    if (!response.ok) return [];
+
+    const contentType = response.headers.get("content-type");
+
+    if (contentType?.includes("application/rss+xml")) {
+        return [
+            {
+                href: pageUrl,
+                isUncertain: false,
+                title: null,
+                type: "application/rss+xml"
+            }
+        ] as const satisfies FeedItem[];
+    }
+
+    if (!contentType?.includes("text/html")) return [];
+
     const text = await response.text();
     const { document } = parseHTML(text);
 
