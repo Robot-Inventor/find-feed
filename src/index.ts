@@ -144,7 +144,10 @@ const findFeed = async (pageUrl: string, options?: FindFeedOptions): Promise<Fee
     const response = await fetch(pageUrl, requestOptions);
 
     if (!response.ok) return [];
-    if (response.headers.get("content-type")?.includes("application/rss+xml")) {
+
+    const contentType = response.headers.get("content-type");
+
+    if (contentType?.includes("application/rss+xml")) {
         return [
             {
                 href: pageUrl,
@@ -155,7 +158,7 @@ const findFeed = async (pageUrl: string, options?: FindFeedOptions): Promise<Fee
         ] as const satisfies FeedItem[];
     }
 
-    if (!response.headers.get("content-type")?.includes("text/html")) return [];
+    if (!contentType?.includes("text/html")) return [];
 
     const text = await response.text();
     const { document } = parseHTML(text);
