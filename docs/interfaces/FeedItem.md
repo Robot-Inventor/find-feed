@@ -1,4 +1,4 @@
-[**find-feed v1.2.0**](../README.md)
+[**find-feed v1.3.0**](../README.md)
 
 ***
 
@@ -6,7 +6,7 @@
 
 # Interface: FeedItem
 
-Defined in: [index.ts:6](https://github.com/Robot-Inventor/find-feed/blob/f8e1bdebfcfbbb6152c514886e0c6225dd3aef43/src/index.ts#L6)
+Defined in: [index.ts:6](https://github.com/Robot-Inventor/find-feed/blob/59eb4c292413c625f76a6aeb67701f28657847d2/src/index.ts#L6)
 
 Interface representing a feed item.
 
@@ -16,7 +16,7 @@ Interface representing a feed item.
 
 > **href**: `null` \| `string`
 
-Defined in: [index.ts:8](https://github.com/Robot-Inventor/find-feed/blob/f8e1bdebfcfbbb6152c514886e0c6225dd3aef43/src/index.ts#L8)
+Defined in: [index.ts:8](https://github.com/Robot-Inventor/find-feed/blob/59eb4c292413c625f76a6aeb67701f28657847d2/src/index.ts#L8)
 
 The URL of the feed.
 
@@ -26,7 +26,7 @@ The URL of the feed.
 
 > **isUncertain**: `boolean`
 
-Defined in: [index.ts:14](https://github.com/Robot-Inventor/find-feed/blob/f8e1bdebfcfbbb6152c514886e0c6225dd3aef43/src/index.ts#L14)
+Defined in: [index.ts:14](https://github.com/Robot-Inventor/find-feed/blob/59eb4c292413c625f76a6aeb67701f28657847d2/src/index.ts#L14)
 
 Whether the feed is uncertain (e.g., from aggressiveSearch).
 
@@ -36,7 +36,7 @@ Whether the feed is uncertain (e.g., from aggressiveSearch).
 
 > **title**: `null` \| `string`
 
-Defined in: [index.ts:10](https://github.com/Robot-Inventor/find-feed/blob/f8e1bdebfcfbbb6152c514886e0c6225dd3aef43/src/index.ts#L10)
+Defined in: [index.ts:10](https://github.com/Robot-Inventor/find-feed/blob/59eb4c292413c625f76a6aeb67701f28657847d2/src/index.ts#L10)
 
 The title of the feed.
 
@@ -46,6 +46,6 @@ The title of the feed.
 
 > **type**: `null` \| `string`
 
-Defined in: [index.ts:12](https://github.com/Robot-Inventor/find-feed/blob/f8e1bdebfcfbbb6152c514886e0c6225dd3aef43/src/index.ts#L12)
+Defined in: [index.ts:12](https://github.com/Robot-Inventor/find-feed/blob/59eb4c292413c625f76a6aeb67701f28657847d2/src/index.ts#L12)
 
 The type of the feed (e.g., application/rss+xml, application/atom+xml).
