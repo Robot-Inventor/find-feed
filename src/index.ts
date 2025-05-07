@@ -163,7 +163,7 @@ const findFeed = async (pageUrl: string, options?: FindFeedOptions): Promise<Fee
                 href: pageUrl,
                 isUncertain: false,
                 title: null,
-                type: "application/rss+xml"
+                type: contentType.split(";")[0]?.trim() ?? null
             }
         ] as const satisfies FeedItem[];
     }
