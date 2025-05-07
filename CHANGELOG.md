@@ -1,5 +1,24 @@
 # find-feed
 
+## 1.4.0
+
+### Minor Changes
+
+- [#25](https://github.com/Robot-Inventor/find-feed/pull/25) [`eff0b0e`](https://github.com/Robot-Inventor/find-feed/commit/eff0b0e3703ca663567a5e010d9981fbacf8a120) Thanks [@Robot-Inventor](https://github.com/Robot-Inventor)! - feat: add MIME type to be considered as feeds
+
+    The following MIME types are now considered feeds:
+
+    - `application/rss+xml`
+    - `application/atom+xml`
+    - `application/xml`
+    - `text/xml`
+
+### Patch Changes
+
+- [#28](https://github.com/Robot-Inventor/find-feed/pull/28) [`e09b8c0`](https://github.com/Robot-Inventor/find-feed/commit/e09b8c0b254aed5d4c35d165a9c8b550df28ad35) Thanks [@Robot-Inventor](https://github.com/Robot-Inventor)! - fix: update feed item type to use the actual content type
+
+- [#27](https://github.com/Robot-Inventor/find-feed/pull/27) [`d7f0227`](https://github.com/Robot-Inventor/find-feed/commit/d7f02274214928405f24b01f90792b410513c287) Thanks [@Robot-Inventor](https://github.com/Robot-Inventor)! - fix: normalize content type header by trimming and converting to lowercase
+
 ## 1.3.1
 
 ### Patch Changes
