@@ -28,6 +28,16 @@ interface FindFeedOptions {
 }
 
 /**
+ * Check if the content type is XML.
+ * @param contentType The content type of the response.
+ * @returns True if the content type is XML, false otherwise.
+ */
+const isXml = (contentType: string): boolean => {
+    const xmlMimeTypes = ["application/rss+xml", "application/atom+xml", "application/xml", "text/xml"] as const;
+    return xmlMimeTypes.some((type) => contentType.includes(type));
+};
+
+/**
  * Get the parent page URL from the given URL.
  * @param url The URL to get the parent page URL from.
  * @returns The parent page URL or null if the URL is the root.
@@ -142,12 +152,12 @@ const findFeed = async (pageUrl: string, options?: FindFeedOptions): Promise<Fee
     const { recursive = false, requestOptions = {}, aggressiveSearch = false } = options ?? {};
 
     const response = await fetch(pageUrl, requestOptions);
-
     if (!response.ok) return [];
 
     const contentType = response.headers.get("content-type");
+    if (!contentType) return [];
 
-    if (contentType?.includes("application/rss+xml")) {
+    if (isXml(contentType)) {
         return [
             {
                 href: pageUrl,
@@ -158,7 +168,7 @@ const findFeed = async (pageUrl: string, options?: FindFeedOptions): Promise<Fee
         ] as const satisfies FeedItem[];
     }
 
-    if (!contentType?.includes("text/html")) return [];
+    if (!contentType.includes("text/html")) return [];
 
     const text = await response.text();
     const { document } = parseHTML(text);
