@@ -7,6 +7,9 @@
     "files": [
         "./dist/"
     ],
+    "publishConfig": {
+        "provenance": true
+    },
     "scripts": {
         "build": "tsc",
         "typedoc": "typedoc --plugin typedoc-plugin-markdown --cleanOutputDir --excludePrivate --includeVersion --readme none ./src/index.ts",
