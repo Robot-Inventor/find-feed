@@ -1,5 +1,11 @@
 # find-feed
 
+## 1.4.2
+
+### Patch Changes
+
+- [#49](https://github.com/Robot-Inventor/find-feed/pull/49) [`a39402f`](https://github.com/Robot-Inventor/find-feed/commit/a39402f72b2254fe5bb485f97bb51800ec237ea5) Thanks [@Robot-Inventor](https://github.com/Robot-Inventor)! - ci: migrate from npm token to trusted publishing
+
 ## 1.4.1
 
 ### Patch Changes
