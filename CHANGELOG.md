@@ -1,5 +1,11 @@
 # find-feed
 
+## 1.4.3
+
+### Patch Changes
+
+- [#53](https://github.com/Robot-Inventor/find-feed/pull/53) [`424b4b1`](https://github.com/Robot-Inventor/find-feed/commit/424b4b19bb90a9d2acf1e35ef830eda5613d8a43) Thanks [@renovate](https://github.com/apps/renovate)! - fix(deps): update dependency linkedom to v0.18.12
+
 ## 1.4.2
 
 ### Patch Changes
