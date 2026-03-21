@@ -1,4 +1,4 @@
-[**find-feed v1.4.3**](../README.md)
+[**find-feed v1.4.4**](../README.md)
 
 ***
 
@@ -6,7 +6,7 @@
 
 # Interface: FeedItem
 
-Defined in: [index.ts:6](https://github.com/Robot-Inventor/find-feed/blob/424b4b19bb90a9d2acf1e35ef830eda5613d8a43/src/index.ts#L6)
+Defined in: [index.ts:6](https://github.com/Robot-Inventor/find-feed/blob/871b518e64e886c5f568e2885b774c24d4f3f339/src/index.ts#L6)
 
 Interface representing a feed item.
 
@@ -14,9 +14,9 @@ Interface representing a feed item.
 
 ### href
 
-> **href**: `null` \| `string`
+> **href**: `string` \| `null`
 
-Defined in: [index.ts:8](https://github.com/Robot-Inventor/find-feed/blob/424b4b19bb90a9d2acf1e35ef830eda5613d8a43/src/index.ts#L8)
+Defined in: [index.ts:8](https://github.com/Robot-Inventor/find-feed/blob/871b518e64e886c5f568e2885b774c24d4f3f339/src/index.ts#L8)
 
 The URL of the feed.
 
@@ -26,7 +26,7 @@ The URL of the feed.
 
 > **isUncertain**: `boolean`
 
-Defined in: [index.ts:14](https://github.com/Robot-Inventor/find-feed/blob/424b4b19bb90a9d2acf1e35ef830eda5613d8a43/src/index.ts#L14)
+Defined in: [index.ts:14](https://github.com/Robot-Inventor/find-feed/blob/871b518e64e886c5f568e2885b774c24d4f3f339/src/index.ts#L14)
 
 Whether the feed is uncertain (e.g., from aggressiveSearch).
 
@@ -34,9 +34,9 @@ Whether the feed is uncertain (e.g., from aggressiveSearch).
 
 ### title
 
-> **title**: `null` \| `string`
+> **title**: `string` \| `null`
 
-Defined in: [index.ts:10](https://github.com/Robot-Inventor/find-feed/blob/424b4b19bb90a9d2acf1e35ef830eda5613d8a43/src/index.ts#L10)
+Defined in: [index.ts:10](https://github.com/Robot-Inventor/find-feed/blob/871b518e64e886c5f568e2885b774c24d4f3f339/src/index.ts#L10)
 
 The title of the feed.
 
@@ -44,8 +44,8 @@ The title of the feed.
 
 ### type
 
-> **type**: `null` \| `string`
+> **type**: `string` \| `null`
 
-Defined in: [index.ts:12](https://github.com/Robot-Inventor/find-feed/blob/424b4b19bb90a9d2acf1e35ef830eda5613d8a43/src/index.ts#L12)
+Defined in: [index.ts:12](https://github.com/Robot-Inventor/find-feed/blob/871b518e64e886c5f568e2885b774c24d4f3f339/src/index.ts#L12)
 
 The type of the feed (e.g., application/rss+xml, application/atom+xml).
