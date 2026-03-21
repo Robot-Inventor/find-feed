@@ -1,4 +1,4 @@
-[**find-feed v1.4.3**](../README.md)
+[**find-feed v1.4.4**](../README.md)
 
 ***
 
@@ -6,15 +6,15 @@
 
 # Interface: FindFeedOptions
 
-Defined in: [index.ts:17](https://github.com/Robot-Inventor/find-feed/blob/424b4b19bb90a9d2acf1e35ef830eda5613d8a43/src/index.ts#L17)
+Defined in: [index.ts:17](https://github.com/Robot-Inventor/find-feed/blob/871b518e64e886c5f568e2885b774c24d4f3f339/src/index.ts#L17)
 
 ## Properties
 
 ### aggressiveSearch?
 
-> `optional` **aggressiveSearch**: `boolean`
+> `optional` **aggressiveSearch?**: `boolean`
 
-Defined in: [index.ts:27](https://github.com/Robot-Inventor/find-feed/blob/424b4b19bb90a9d2acf1e35ef830eda5613d8a43/src/index.ts#L27)
+Defined in: [index.ts:27](https://github.com/Robot-Inventor/find-feed/blob/871b518e64e886c5f568e2885b774c24d4f3f339/src/index.ts#L27)
 
 Whether to perform an aggressive search for feeds, including uncertain ones.
 When set to `true`, it will heuristically detect RSS feed URLs by exploring links such as `<a href="https://example.com/feed"></a>`.
@@ -24,9 +24,9 @@ Feeds found using this method will have the `isUncertain` property set to `true`
 
 ### recursive?
 
-> `optional` **recursive**: `boolean`
+> `optional` **recursive?**: `boolean`
 
-Defined in: [index.ts:19](https://github.com/Robot-Inventor/find-feed/blob/424b4b19bb90a9d2acf1e35ef830eda5613d8a43/src/index.ts#L19)
+Defined in: [index.ts:19](https://github.com/Robot-Inventor/find-feed/blob/871b518e64e886c5f568e2885b774c24d4f3f339/src/index.ts#L19)
 
 Whether to search for feeds in the parent page URL.
 
@@ -34,8 +34,8 @@ Whether to search for feeds in the parent page URL.
 
 ### requestOptions?
 
-> `optional` **requestOptions**: `RequestInit`
+> `optional` **requestOptions?**: `RequestInit`
 
-Defined in: [index.ts:21](https://github.com/Robot-Inventor/find-feed/blob/424b4b19bb90a9d2acf1e35ef830eda5613d8a43/src/index.ts#L21)
+Defined in: [index.ts:21](https://github.com/Robot-Inventor/find-feed/blob/871b518e64e886c5f568e2885b774c24d4f3f339/src/index.ts#L21)
 
 Optional request options for the fetch call.

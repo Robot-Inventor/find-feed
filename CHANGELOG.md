@@ -1,5 +1,11 @@
 # find-feed
 
+## 1.4.4
+
+### Patch Changes
+
+- [#95](https://github.com/Robot-Inventor/find-feed/pull/95) [`129ab32`](https://github.com/Robot-Inventor/find-feed/commit/129ab32b4f916792c9815d7073287dc7906ac5d4) Thanks [@dependabot](https://github.com/apps/dependabot)! - chore(deps-dev): bump flatted from 3.3.3 to 3.4.2
+
 ## 1.4.3
 
 ### Patch Changes
