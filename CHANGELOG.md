@@ -1,5 +1,11 @@
 # find-feed
 
+## 1.4.5
+
+### Patch Changes
+
+- [#97](https://github.com/Robot-Inventor/find-feed/pull/97) [`571527e`](https://github.com/Robot-Inventor/find-feed/commit/571527ecfd48ae19ba6b677b1b4873e99a03f36a) Thanks [@dependabot](https://github.com/apps/dependabot)! - chore(deps): bump picomatch
+
 ## 1.4.4
 
 ### Patch Changes
