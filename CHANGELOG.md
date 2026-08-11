@@ -1,5 +1,11 @@
 # find-feed
 
+## 1.4.7
+
+### Patch Changes
+
+- [#133](https://github.com/Robot-Inventor/find-feed/pull/133) [`58be36d`](https://github.com/Robot-Inventor/find-feed/commit/58be36da6c8f0ec8ba70ba5e7f9877f45e062233) Thanks [@Robot-Inventor](https://github.com/Robot-Inventor)! - chore: update vulnerable dependencies
+
 ## 1.4.6
 
 ### Patch Changes
