@@ -39,11 +39,12 @@
         "@changesets/cli": "^3.0.3",
         "@robot-inventor/oxlint-config": "^0.2.0",
         "@robot-inventor/tsconfig-base": "^7.2.0",
+        "@typescript/native": "npm:typescript@^7.0.2",
         "oxlint": "^1.83.0",
         "prettier": "^3.9.6",
         "typedoc": "^0.28.20",
         "typedoc-plugin-markdown": "^4.13.0",
-        "typescript": "^5.9.3"
+        "typescript": "npm:@typescript/typescript6@^6.0.2"
     },
     "dependencies": {
         "linkedom": "^0.18.13"
