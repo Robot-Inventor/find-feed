@@ -47,7 +47,7 @@ const getParentUrl = (url: string): string | null => {
     if (!parsedUrl?.pathname || parsedUrl.pathname === "/") return null;
 
     parsedUrl.pathname =
-        // eslint-disable-next-line no-magic-numbers
+        // oxlint-disable-next-line no-magic-numbers
         parsedUrl.pathname.split("/").slice(0, -1).join("/") || "/";
     return parsedUrl.toString();
 };
@@ -147,7 +147,7 @@ const findFeedsFromAnchors = (pageUrl: string, document: Document): FeedItem[] =
  * @param options Optional options for the search.
  * @returns An array of feed items found in the page.
  */
-// eslint-disable-next-line max-statements
+// oxlint-disable-next-line max-statements
 const findFeed = async (pageUrl: string, options?: FindFeedOptions): Promise<FeedItem[]> => {
     const { recursive = false, requestOptions = {}, aggressiveSearch = false } = options ?? {};
 
