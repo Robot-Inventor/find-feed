@@ -1,5 +1,11 @@
 # find-feed
 
+## 1.4.8
+
+### Patch Changes
+
+- [#160](https://github.com/Robot-Inventor/find-feed/pull/160) [`d5f7d41`](https://github.com/Robot-Inventor/find-feed/commit/d5f7d4127a7d493289393b1dadec937b193cd3b2) Thanks [@Robot-Inventor](https://github.com/Robot-Inventor)! - chore: remove unused oxlint-disable comment
+
 ## 1.4.7
 
 ### Patch Changes
