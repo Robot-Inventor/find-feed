@@ -147,7 +147,6 @@ const findFeedsFromAnchors = (pageUrl: string, document: Document): FeedItem[] =
  * @param options Optional options for the search.
  * @returns An array of feed items found in the page.
  */
-// oxlint-disable-next-line max-statements
 const findFeed = async (pageUrl: string, options?: FindFeedOptions): Promise<FeedItem[]> => {
     const { recursive = false, requestOptions = {}, aggressiveSearch = false } = options ?? {};
 
