@@ -40,7 +40,7 @@
         "@robot-inventor/oxlint-config": "^0.5.2",
         "@robot-inventor/tsconfig-base": "^7.2.0",
         "@typescript/native": "npm:typescript@^7.0.2",
-        "oxlint": "^1.89.0",
+        "oxlint": "^1.90.0",
         "prettier": "^3.9.10",
         "typedoc": "^0.28.20",
         "typedoc-plugin-markdown": "^4.14.1",
