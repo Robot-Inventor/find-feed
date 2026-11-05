@@ -34,6 +34,7 @@ interface FindFeedOptions {
  */
 const isXml = (contentType: string): boolean => {
     const xmlMimeTypes = ["application/rss+xml", "application/atom+xml", "application/xml", "text/xml"] as const;
+
     return xmlMimeTypes.some((type) => contentType.includes(type));
 };
 
@@ -49,6 +50,7 @@ const getParentUrl = (url: string): string | null => {
     parsedUrl.pathname =
         // oxlint-disable-next-line no-magic-numbers
         parsedUrl.pathname.split("/").slice(0, -1).join("/") || "/";
+
     return parsedUrl.toString();
 };
 
@@ -184,6 +186,7 @@ const findFeed = async (pageUrl: string, options?: FindFeedOptions): Promise<Fee
 
     const parentFeeds = await findFeed(parentUrl, options);
     const uniqueFeeds = removeDuplicateFeeds(result.concat(parentFeeds));
+
     return uniqueFeeds;
 };
 
